@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selector Forms</title>
+
+    <style>
+               p {
+            color: blue;
+        }
+
+       
+        #mainTitle {
+            color: darkred;
+            text-align: center;
+        }
+
+
+        .highlight {
+            background-color: yellow;
+        }
+
+        
+        h2, h3 {
+            color: green;
+        }
+
+        
+        * {
+            font-family: Arial;
+        }
+
+        
+       
+        div p {
+            color: purple;
+        }
+
+       
+        div > span {
+            color: brown;
+            font-weight: bold;
+        }
+
+    
+        h3 + p {
+            background-color: lightgray;
+        }
+
+        h2 ~ p {
+            border: 1px dashed black;
+        }
+
+        
+
+        a:hover {
+            color: red;
+        }
+
+        input:focus {
+            background-color: lightblue;
+        }
+
+        li:first-child {
+            color: darkorange;
+        }
+
+        
+
+        p::first-letter {
+            font-size: 24px;
+            color: red;
+        }
+
+        p::first-line {
+            font-weight: bold;
+        }
+
+        p::after {
+            content: " ★";
+            color: gold;
+        }
+
+        
+
+        input[type="text"] {
+            border: 2px solid green;
+        }
+
+        a[target="_blank"] {
+            color: darkviolet;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="mainTitle">CSS Selector Forms Example</h1>
+
+    <h2>Simple Selectors</h2>
+    <p>This is an element selector example.</p>
+    <p class="highlight">This paragraph uses class selector.</p>
+
+    <h3>Group Selector</h3>
+    <p>This paragraph is affected by group selector.</p>
+
+    <h2>Combinatory Selectors</h2>
+    <div>
+        <p>This is a descendant selector example.</p>
+        <span>This is a child selector example.</span>
+    </div>
+
+    <h3>Adjacent Sibling Selector</h3>
+    <p>This paragraph is adjacent to h3.</p>
+
+    <p>This paragraph is a general sibling of h2.</p>
+
+    <h2>Pseudo-class Selector</h2>
+    <a href="#" target="_blank">Hover over this link</a><br><br>
+    <input type="text" placeholder="Click here to focus">
+
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+
+    <h2>Pseudo-element Selector</h2>
+    <p>This paragraph shows pseudo-element effects.</p>
+
+    <h2>Attribute Selector</h2>
+    <input type="text" placeholder="Text input"><br><br>
+    <a href="https://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">Attribute selector link</a>
+
+</body>
+</html>
