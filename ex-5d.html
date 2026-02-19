@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Box Model Photo Frame</title>
+
+<style>
+
+body{
+    background:#ddd;
+    text-align:center;
+    font-family:Arial;
+}
+
+
+.gallery{
+    margin-top:40px;
+}
+
+
+.frame{
+    display:inline-block;
+    margin:30px;                 
+    border:10px solid brown;    
+    padding:20px;                
+    background:white;
+}
+
+
+.frame img{
+    width:200px;
+    height:150px;
+    display:block;
+}
+
+.caption{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>CSS Box Model – Photo Frame Example</h2>
+
+<div class="gallery">
+
+    <div class="frame">
+        <img src="https://picsum.photos/200/150?1">
+        <div class="caption">CONTENT (Image)</div>
+    </div>
+
+    <div class="frame">
+        <img src="https://picsum.photos/200/150?2">
+        <div class="caption">CONTENT (Image)</div>
+    </div>
+
+</div>
+
+<p>
+<b>Observe:</b><br>
+Image = Content<br>
+White space around image = Padding<br>
+Brown frame = Border<br>
+Gap between photos = Margin
+</p>
+
+</body>
+</html>
