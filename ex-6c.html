@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Input Methods Example</title>
+
+<script>
+
+function getDetails() {
+
+
+    let name = document.getElementById("name").value;
+
+   
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+
+
+    let hobby = document.getElementById("hobby").checked ? "Reading" : "Not Selected";
+
+
+    let course = document.getElementById("course").value;
+
+
+    document.getElementById("output").innerHTML =
+        "Name: " + name + "<br>" +
+        "Gender: " + gender + "<br>" +
+        "Hobby: " + hobby + "<br>" +
+        "Course: " + course;
+}
+
+</script>
+</head>
+
+<body>
+
+<h2>Different Ways to Take Input in JavaScript</h2>
+
+
+Name: <input type="text" id="name"><br><br>
+
+
+Gender:
+<input type="radio" name="gender" value="Male" checked> Male
+<input type="radio" name="gender" value="Female"> Female
+<br><br>
+
+
+<input type="checkbox" id="hobby"> Reading
+<br><br>
+
+
+Course:
+<select id="course">
+    <option value="BCA">BCA</option>
+    <option value="BSc">BSc</option>
+    <option value="BCom">BCom</option>
+</select>
+<br><br>
+
+<button onclick="getDetails()">Submit</button>
+
+<p id="output"></p>
+
+</body>
+</html>
