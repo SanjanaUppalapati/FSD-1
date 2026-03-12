@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal and External JavaScript Combined</title>
+    <script>
+        function showDate() {
+            const today = new Date();
+            document.getElementById("output").innerHTML =
+                "Today's Date (Internal JS): " + today.toDateString();
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Internal and External JavaScript Example</h2>
+
+    <p id="output">Click a button to see result.</p>
+
+    <button onclick="showDate()">Show Date (Internal JS)</button>
+    <button onclick="showTime()">Show Time (External JS)</button>
+    <script>
+        function showTime() {
+            const now = new Date();
+            document.getElementById("output").innerHTML =
+                "Current Time (External JS): " + now.toLocaleTimeString();
+        }
+    </script>
+
+</body>
+</html>
