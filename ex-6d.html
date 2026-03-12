@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voter Eligibility Program</title>
+
+<style>
+table{
+    border-collapse: collapse;
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th{
+    background-color: lightgreen;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Voter Details</h2>
+
+<script>
+
+// Taking input using prompt
+let voterName = prompt("Enter your name:");
+let voterAge = parseInt(prompt("Enter your age:"));
+
+// Checking eligibility
+let result;
+if(voterAge >= 18){
+    result = "Can Vote";
+} else {
+    result = "Cannot Vote";
+}
+
+// Displaying output in table format
+document.write("<table>");
+document.write("<tr><th>Name</th><th>Age</th><th>Eligibility</th></tr>");
+document.write("<tr>");
+document.write("<td>" + voterName + "</td>");
+document.write("<td>" + voterAge + "</td>");
+document.write("<td>" + result + "</td>");
+document.write("</tr>");
+document.write("</table>");
+
+</script>
+
+</body>
+</html>
