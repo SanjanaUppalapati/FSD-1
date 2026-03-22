@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+    <script>
+        function performOperation() {
+            var n = parseInt(document.getElementById("num").value);
+            var choice = document.getElementById("operation").value;
+            var result = "";
+
+            if (isNaN(n) || n < 0) {
+                document.getElementById("output").innerHTML = "Please enter a valid number.";
+                return;
+            }
+
+            switch (choice) {
+
+                case "factorial":
+                    var fact = 1;
+                    for (var i = 1; i <= n; i++) {
+                        fact *= i;
+                    }
+                    result = "Factorial of " + n + " is: " + fact;
+                    break;
+
+                case "fibonacci":
+                    var a = 0, b = 1, temp;
+                    var series = "";
+                    while (a <= n) {
+                        series += a + " ";
+                        temp = a + b;
+                        a = b;
+                        b = temp;
+                    }
+                    result = "Fibonacci series up to " + n + ":<br>" + series;
+                    break;
+
+                case "prime":
+                    var primes = "";
+                    for (var i = 2; i <= n; i++) {
+                        var isPrime = true;
+                        for (var j = 2; j <= Math.sqrt(i); j++) {
+                            if (i % j == 0) {
+                                isPrime = false;
+                                break;
+                            }
+                        }
+                        if (isPrime) {
+                            primes += i + " ";
+                        }
+                    }
+                    result = "Prime numbers up to " + n + ":<br>" + primes;
+                    break;
+
+                case "palindrome":
+                    var original = n;
+                    var reverse = 0;
+                    while (n > 0) {
+                        var rem = n % 10;
+                        reverse = reverse * 10 + rem;
+                        n = Math.floor(n / 10);
+                    }
+                    if (original == reverse)
+                        result = original + " is a Palindrome.";
+                    else
+                        result = original + " is not a Palindrome.";
+                    break;
+
+                default:
+                    result = "Please select an operation.";
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Number Operations Using Functions & Events</h2>
+
+    <label>Enter a Number:</label>
+    <input type="number" id="num"><br><br>
+
+    <label>Select Operation:</label>
+    <select id="operation" onchange="performOperation()">
+        <option value="">--Select--</option>
+        <option value="factorial">Factorial</option>
+        <option value="fibonacci">Fibonacci Series</option>
+        <option value="prime">Prime Numbers</option>
+        <option value="palindrome">Palindrome Check</option>
+    </select>
+
+    <br><br>
+    <div id="output"></div>
+
+</body>
+</html>
