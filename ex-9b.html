@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Operations</title>
+
+    <script>
+        function getValue() {
+            return parseInt(document.getElementById("number").value);
+        }
+
+        function findFactorial() {
+            var n = getValue();
+            var fact = 1;
+
+            for (var i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Factorial of " + n + " is: " + fact;
+        }
+
+        function findFibonacci() {
+            var n = getValue();
+            var a = 0, b = 1, temp;
+            var series = "";
+
+            while (a <= n) {
+                series += a + " ";
+                temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Fibonacci series up to " + n + ": <br>" + series;
+        }
+
+        function findPrime() {
+            var n = getValue();
+            var primes = "";
+
+            for (var i = 2; i <= n; i++) {
+                var isPrime = true;
+
+                for (var j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (isPrime) {
+                    primes += i + " ";
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Prime numbers up to " + n + ": <br>" + primes;
+        }
+
+        function checkPalindrome() {
+            var n = getValue();
+            var original = n;
+            var reverse = 0;
+
+            while (n > 0) {
+                var rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n = Math.floor(n / 10);
+            }
+
+            if (original == reverse) {
+                document.getElementById("result").innerHTML =
+                    original + " is a Palindrome.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    original + " is not a Palindrome.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>Number Operations</h2>
+
+    <label>Enter a Number:</label>
+    <input type="number" id="number"><br><br>
+
+    <button onclick="findFactorial()">Factorial</button>
+    <button onclick="findFibonacci()">Fibonacci</button>
+    <button onclick="findPrime()">Prime</button>
+    <button onclick="checkPalindrome()">Palindrome</button>
+
+    <h3 id="result"></h3>
+
+</body>
+</html>
