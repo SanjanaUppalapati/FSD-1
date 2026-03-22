@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week Days</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Enter Number (1-7)</h3>
+<input type="text" id="num">
+<button onclick="displayDay()">Show</button>
+
+<p id="output"></p>
+
+<script>
+function displayDay() {
+    var n = document.getElementById("num").value;
+    var day;
+
+    switch(n) {
+        case "1": day = "Monday"; break;
+        case "2": day = "Tuesday"; break;
+        case "3": day = "Wednesday"; break;
+        case "4": day = "Thursday"; break;
+        case "5": day = "Friday"; break;
+        case "6": day = "Saturday"; break;
+        case "7": day = "Sunday"; break;
+        default: day = "Invalid Number";
+    }
+
+    document.getElementById("output").innerHTML = day;
+}
+</script>
+
+</body>
+</html>
