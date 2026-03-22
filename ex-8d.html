@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Loop Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h3>Print Student Data</h3>
+<button onclick="showData()">Show Data</button>
+
+<p id="output"></p>
+
+<script>
+function showData() {
+
+    var student = {
+        name: "Rahul",
+        course: "BCA",
+        marks: 85
+    };
+
+    var text = "";
+
+    // for-in loop
+    text += "Using for-in:<br>";
+    for (var key in student) {
+        text += key + " : " + student[key] + "<br>";
+    }
+
+    // Convert object to array
+    var data = Object.values(student);
+
+    // for-of loop
+    text += "<br>Using for-of:<br>";
+    for (var value of data) {
+        text += value + "<br>";
+    }
+
+    // forEach loop
+    text += "<br>Using forEach:<br>";
+    data.forEach(function(value) {
+        text += value + "<br>";
+    });
+
+    document.getElementById("output").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
