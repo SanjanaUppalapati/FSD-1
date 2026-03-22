@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops Program</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .box {
+            width: 300px;
+            margin: auto;
+        }
+        button {
+            padding: 5px 10px;
+        }
+        #output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h3>Print 1 to 10 Numbers</h3>
+    <button onclick="printNumbers()">Print Numbers</button>
+    <p id="output"></p>
+</div>
+<script>
+function printNumbers() {
+    var result = "";
+    result += "For Loop: ";
+    for (var i = 1; i <= 10; i++) {
+        result += i + " ";
+    }
+    result += "<br><br>";
+    result += "While Loop: ";
+    var j = 1;
+    while (j <= 10) {
+        result += j + " ";
+        j++;
+    }
+    result += "<br><br>";
+    result += "Do-While Loop: ";
+    var k = 1;
+    do {
+        result += k + " ";
+        k++;
+    } while (k <= 10);
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
